@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Alpaca Web Application</display-name>
+
+    <!-- Restlet adapter to expose Alpaca Rest Services -->
+    <servlet>
+        <servlet-name>RestletServletAlpaca</servlet-name>
+        <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+        <init-param>
+            <!-- Application class name -->
+            <param-name>org.restlet.application</param-name>
+            <param-value>org.activiti.rest.alpaca.application.AlpacaRestApplication</param-value>
+        </init-param>
+    </servlet>
+
+
+	<!-- Session timeout on one day -->
+	<session-config>
+		<session-timeout>480</session-timeout>
+	</session-config>
+
+    <!-- Catch task form requests -->
+    <servlet-mapping>
+        <servlet-name>RestletServletAlpaca</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+
+
+</web-app>

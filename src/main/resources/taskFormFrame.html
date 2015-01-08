@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Activiti Alpaca Forms</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="http://code.cloudcms.com/alpaca/1.5.5/bootstrap/alpaca.min.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
+    <script type="text/javascript" src="http://code.cloudcms.com/alpaca/1.5.5/bootstrap/alpaca.min.js"></script>
+    <script type="text/javascript" src="../../lib/amplify.min.js" charset="utf-8"></script>
+
+    <!-- Custom Files -->
+    <script type="text/javascript" src="../../js/ActivitiFormRest.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../js/taskForm.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="form"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+  /** The base URL and options below may need to be modified depending on the context of the REST API being used **/
+
+  var baseUrl = window.document.location.protocol + "//" + window.document.location.host + "/";
+  var taskId = window.document.location.href.substring(window.document.location.href.lastIndexOf("/")+1);
+  
+  ActivitiFormRest.options = {
+    startFormById: baseUrl + "activiti-explorer/rest/process-definition/{processDefinitionId}/form",
+    taskFormById: baseUrl + "activiti-explorer/rest/task/{taskId}/form",
+    submitTaskData: baseUrl + "activiti-explorer/rest/form/form-data",
+    submitStartForm: baseUrl + "activiti-explorer/rest/runtime/process-instances"
+  };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+#surefire
+#Wed Jan 07 15:17:01 CST 2015
+user.dir=/Users/gharley/Dev/Activiti.5.14/modules/activiti-webapp-alpaca
+localRepository=/Users/gharley/.m2/repository
+basedir=/Users/gharley/Dev/Activiti.5.14/modules/activiti-webapp-alpaca
